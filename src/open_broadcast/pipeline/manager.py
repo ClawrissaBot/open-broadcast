@@ -22,6 +22,8 @@ class PipelineConfig:
 
     # Audio
     noise_suppression: bool = True
+    vad_enabled: bool = True
+    vad_threshold: float = 0.5
     input_device: int | None = None
     output_device: int | None = None
 
