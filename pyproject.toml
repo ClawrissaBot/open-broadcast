@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "open-broadcast"
+version = "0.1.0"
+description = "Free, open-source NVIDIA Broadcast alternative — runs on CPU"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Zigdon7" },
+]
+
+dependencies = [
+    "opencv-python>=4.8",
+    "mediapipe>=0.10",
+    "numpy>=1.24",
+    "sounddevice>=0.4",
+    "pyside6>=6.6",
+    "pynput>=1.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1",
+    "mypy>=1.0",
+]
+linux = [
+    "pyvirtualcam>=0.10",
+]
+
+[project.scripts]
+open-broadcast = "open_broadcast.app:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
